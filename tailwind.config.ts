@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,8 +66,8 @@ export default {
 				whatsapp: '#25D366'
 			},
 			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
-				'source': ['Source Sans Pro', 'sans-serif']
+				'cormorant': ['Cormorant Garamond', 'serif'],
+				'inter': ['Inter', 'sans-serif']
 			},
 			backgroundImage: {
 				'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F7D794 50%, #D4AF37 100%)',

@@ -3,7 +3,7 @@ import { Home, Briefcase, User, Phone, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-white text-black py-12 border-t border-gray-200">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Motto */}
@@ -18,43 +18,43 @@ const Footer = () => {
                 }}
               />
               <div>
-                <h3 className="text-gold font-playfair font-bold text-xl bg-gold-text bg-clip-text text-transparent">KK Legal</h3>
-                <p className="text-white text-sm font-source">तमसो मा ज्योतिर्गमय</p>
+                <h3 className="text-gold font-cormorant font-bold text-xl bg-gold-text bg-clip-text text-transparent">KK Legal</h3>
+                <p className="text-black text-sm font-inter">तमसो मा ज्योतिर्गमय</p>
               </div>
             </div>
-            <p className="text-gray-300 font-source">
+            <p className="text-gray-600 font-inter">
               From darkness to light - providing strategic legal counsel across Karnataka.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-gold font-playfair font-semibold text-lg">Quick Links</h4>
+            <h4 className="text-gold font-cormorant font-semibold text-lg">Quick Links</h4>
             <div className="space-y-2">
               <button 
                 onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-source"
+                className="flex items-center gap-2 text-gray-700 hover:text-gold transition-colors font-inter"
               >
                 <Home size={16} />
                 Home
               </button>
               <button 
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-source"
+                className="flex items-center gap-2 text-gray-700 hover:text-gold transition-colors font-inter"
               >
                 <Briefcase size={16} />
                 Services
               </button>
               <button 
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-source"
+                className="flex items-center gap-2 text-gray-700 hover:text-gold transition-colors font-inter"
               >
                 <User size={16} />
                 About
               </button>
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-source"
+                className="flex items-center gap-2 text-gray-700 hover:text-gold transition-colors font-inter"
               >
                 <Phone size={16} />
                 Contact
@@ -64,8 +64,8 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-gold font-playfair font-semibold text-lg">Contact Information</h4>
-            <div className="space-y-2 text-gray-300 font-source">
+            <h4 className="text-gold font-cormorant font-semibold text-lg">Contact Information</h4>
+            <div className="space-y-2 text-gray-700 font-inter">
               <p>Advocate Y.S. Kashyap Sai</p>
               <p>Phone: +91 99806 50291</p>
               <p>Email: kklegal.org@gmail.com</p>
@@ -74,7 +74,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/yskashyapsai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-gray-300 hover:text-gold transition-colors mt-2"
+                className="inline-flex items-center space-x-2 text-gray-700 hover:text-gold transition-colors mt-2"
               >
                 <Linkedin className="w-5 h-5" />
                 <span>LinkedIn Profile</span>
@@ -83,12 +83,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8">
+        <div className="border-t border-gray-200 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 font-source text-sm">
+            <p className="text-gray-500 font-inter text-sm">
               © 2024 KK Legal. All rights reserved.
             </p>
-            <p className="text-gray-400 font-source text-sm text-center md:text-right">
+            <p className="text-gray-500 font-inter text-sm text-center md:text-right">
               This website is intended for informational purposes only. No legal services are solicited or advertised.
             </p>
           </div>

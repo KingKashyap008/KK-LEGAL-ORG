@@ -4,10 +4,10 @@ const About = () => {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-black mb-6">
             About <span className="bg-gold-text bg-clip-text text-transparent">Advocate Y.S. Kashyap Sai</span>
           </h2>
-          <p className="text-xl text-gray-600 font-source max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 font-inter max-w-3xl mx-auto">
             Guiding clients from uncertainty to clarity with principled legal counsel
           </p>
         </div>
@@ -28,7 +28,7 @@ const About = () => {
 
             {/* Content */}
             <div className="space-y-6 order-2 lg:order-2">
-              <div className="text-lg text-gray-700 font-source space-y-4">
+              <div className="text-lg text-gray-700 font-inter space-y-4">
                 <p>
                   Advocate Y.S. Kashyap Sai founded KK Legal with a clear vision: to dispel the "darkness" of legal uncertainty through methodical application of law, clear communication, and an empathetic understanding of each client's unique journey.
                 </p>
@@ -44,30 +44,30 @@ const About = () => {
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-center mb-2">
                     <div className="w-1 h-6 bg-gold mr-3"></div>
-                    <h4 className="font-playfair font-semibold text-black">Clarity</h4>
+                    <h4 className="font-cormorant font-semibold text-black">Clarity</h4>
                   </div>
-                  <p className="text-gray-600 font-source text-sm">Demystifying legal complexities into understandable terms</p>
+                  <p className="text-gray-600 font-inter text-sm">Demystifying legal complexities into understandable terms</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-center mb-2">
                     <div className="w-1 h-6 bg-gold mr-3"></div>
-                    <h4 className="font-playfair font-semibold text-black">Integrity</h4>
+                    <h4 className="font-cormorant font-semibold text-black">Integrity</h4>
                   </div>
-                  <p className="text-gray-600 font-source text-sm">Unwavering commitment to ethical practice and transparency</p>
+                  <p className="text-gray-600 font-inter text-sm">Unwavering commitment to ethical practice and transparency</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-center mb-2">
                     <div className="w-1 h-6 bg-gold mr-3"></div>
-                    <h4 className="font-playfair font-semibold text-black">Empowerment</h4>
+                    <h4 className="font-cormorant font-semibold text-black">Empowerment</h4>
                   </div>
-                  <p className="text-gray-600 font-source text-sm">Equipping clients with knowledge to make informed decisions</p>
+                  <p className="text-gray-600 font-inter text-sm">Equipping clients with knowledge to make informed decisions</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-center mb-2">
                     <div className="w-1 h-6 bg-gold mr-3"></div>
-                    <h4 className="font-playfair font-semibold text-black">Resolution</h4>
+                    <h4 className="font-cormorant font-semibold text-black">Resolution</h4>
                   </div>
-                  <p className="text-gray-600 font-source text-sm">Relentless focus on achieving tangible, favorable outcomes</p>
+                  <p className="text-gray-600 font-inter text-sm">Relentless focus on achieving tangible, favorable outcomes</p>
                 </div>
               </div>
             </div>
