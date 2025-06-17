@@ -16,9 +16,9 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-3">
             <img 
-              src="/placeholder.svg" 
+              src="/lovable-uploads/d2c7383a-b808-4503-8eb7-7814803eba24.png" 
               alt="KK Legal Logo" 
-              className="h-12 w-12 brightness-0 invert"
+              className="h-12 w-12 brightness-0 invert opacity-90"
             />
             <div>
               <h1 className="text-gold font-montserrat font-bold text-xl">KK Legal</h1>
@@ -59,7 +59,7 @@ const Header = () => {
             className="md:hidden text-gold"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} className="text-gold" /> : <Menu size={28} className="text-gold" />}
           </button>
         </div>
 
