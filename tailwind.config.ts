@@ -63,12 +63,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				gold: '#FFD700',
+				gold: '#D4AF37',
 				whatsapp: '#25D366'
 			},
 			fontFamily: {
-				'montserrat': ['Montserrat', 'sans-serif'],
-				'lato': ['Lato', 'sans-serif']
+				'playfair': ['Playfair Display', 'serif'],
+				'source': ['Source Sans Pro', 'sans-serif']
+			},
+			backgroundImage: {
+				'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F7D794 50%, #D4AF37 100%)',
+				'gold-text': 'linear-gradient(135deg, #D4AF37 0%, #E8C547 50%, #D4AF37 100%)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

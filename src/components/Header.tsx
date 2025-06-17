@@ -18,12 +18,14 @@ const Header = () => {
             <img 
               src="/lovable-uploads/d2c7383a-b808-4503-8eb7-7814803eba24.png" 
               alt="KK Legal Logo" 
-              className="h-12 w-12 brightness-0 invert opacity-100 filter hue-rotate-[45deg] saturate-[3] contrast-[2]"
-              style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1352%) hue-rotate(2deg) brightness(119%) contrast(109%)' }}
+              className="h-12 w-12"
+              style={{ 
+                filter: 'hue-rotate(15deg) saturate(2.5) brightness(1.3) contrast(1.6) sepia(0.4)'
+              }}
             />
             <div>
-              <h1 className="text-gold font-montserrat font-bold text-xl">KK Legal</h1>
-              <p className="text-white text-sm font-lato">तमसो मा ज्योतिर्गमय</p>
+              <h1 className="text-gold font-playfair font-bold text-xl bg-gold-text bg-clip-text text-transparent">KK Legal</h1>
+              <p className="text-white text-sm font-source">तमसो मा ज्योतिर्गमय</p>
             </div>
           </div>
 
@@ -31,28 +33,28 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
+              className="text-white hover:text-gold transition-colors font-source font-medium flex items-center gap-2"
             >
               <Home size={18} />
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
+              className="text-white hover:text-gold transition-colors font-source font-medium flex items-center gap-2"
             >
               <Briefcase size={18} />
               Services
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
+              className="text-white hover:text-gold transition-colors font-source font-medium flex items-center gap-2"
             >
               <User size={18} />
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
+              className="text-white hover:text-gold transition-colors font-source font-medium flex items-center gap-2"
             >
               <Phone size={18} />
               Contact
@@ -73,28 +75,28 @@ const Header = () => {
           <div className="fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
+              className="text-white text-2xl font-playfair hover:text-gold transition-colors flex items-center gap-3"
             >
               <Home size={24} />
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
+              className="text-white text-2xl font-playfair hover:text-gold transition-colors flex items-center gap-3"
             >
               <Briefcase size={24} />
               Services
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
+              className="text-white text-2xl font-playfair hover:text-gold transition-colors flex items-center gap-3"
             >
               <User size={24} />
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
+              className="text-white text-2xl font-playfair hover:text-gold transition-colors flex items-center gap-3"
             >
               <Phone size={24} />
               Contact

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Shield, Home, Heart, FileText, Gavel, Briefcase, Landmark, Rocket, User, Computer, Scale, Building } from 'lucide-react';
 
@@ -88,10 +87,10 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-black mb-6">
-            Legal <span className="text-gold">Services</span>
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-6">
+            Legal <span className="bg-gold-text bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 font-lato max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 font-source max-w-3xl mx-auto">
             Comprehensive legal solutions across diverse practice areas, guiding you from complexity to clarity.
           </p>
         </div>
@@ -107,17 +106,17 @@ const Services = () => {
                   {service.icon}
                 </div>
                 
-                <h3 className="text-xl font-montserrat font-semibold text-black mb-3">
+                <h3 className="text-xl font-playfair font-semibold text-black mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 font-lato mb-4">
+                <p className="text-gray-600 font-source mb-4">
                   {service.description}
                 </p>
                 
                 <button
                   onClick={() => toggleExpanded(index)}
-                  className="flex items-center text-gold hover:text-yellow-600 font-montserrat font-medium transition-colors"
+                  className="flex items-center text-gold hover:text-yellow-600 font-source font-medium transition-colors"
                 >
                   {expandedService === index ? 'Less Details' : 'More Details'}
                   {expandedService === index ? 
@@ -128,7 +127,7 @@ const Services = () => {
                 
                 {expandedService === index && (
                   <div className="mt-4 p-4 bg-gray-50 rounded-lg animate-fade-in">
-                    <p className="text-gray-700 font-lato text-sm">
+                    <p className="text-gray-700 font-source text-sm">
                       {service.details}
                     </p>
                   </div>

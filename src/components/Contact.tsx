@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -49,10 +48,10 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-black mb-6">
-            Get In <span className="text-gold">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-6">
+            Get In <span className="bg-gold-text bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 font-lato max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 font-source max-w-3xl mx-auto">
             Take the first step from uncertainty to clarity. Contact us for a consultation.
           </p>
         </div>
@@ -61,7 +60,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-montserrat font-semibold text-black mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -69,8 +68,8 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-montserrat font-medium text-black">Phone</h4>
-                    <p className="text-gray-600 font-lato">+91 99806 50291</p>
+                    <h4 className="font-playfair font-medium text-black">Phone</h4>
+                    <p className="text-gray-600 font-source">+91 99806 50291</p>
                   </div>
                 </div>
 
@@ -79,8 +78,8 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-montserrat font-medium text-black">Email</h4>
-                    <p className="text-gray-600 font-lato">kklegal.org@gmail.com</p>
+                    <h4 className="font-playfair font-medium text-black">Email</h4>
+                    <p className="text-gray-600 font-source">kklegal.org@gmail.com</p>
                   </div>
                 </div>
 
@@ -89,15 +88,15 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-montserrat font-medium text-black">Location</h4>
-                    <p className="text-gray-600 font-lato">Practicing Across Karnataka</p>
+                    <h4 className="font-playfair font-medium text-black">Location</h4>
+                    <p className="text-gray-600 font-source">Practicing Across Karnataka</p>
                   </div>
                 </div>
               </div>
 
               <button
                 onClick={openWhatsApp}
-                className="w-full mt-8 bg-whatsapp hover:bg-green-600 text-white py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full mt-8 bg-whatsapp hover:bg-green-600 text-white py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-6 h-6 text-white" />
                 WhatsApp Consultation
@@ -107,11 +106,11 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-montserrat font-semibold text-black mb-6">Request Consultation</h3>
+            <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Request Consultation</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-black font-montserrat font-medium mb-2">
+                <label htmlFor="name" className="block text-black font-playfair font-medium mb-2">
                   Full Name *
                 </label>
                 <input
@@ -121,13 +120,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-lato"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-black font-montserrat font-medium mb-2">
+                  <label htmlFor="email" className="block text-black font-playfair font-medium mb-2">
                     Email *
                   </label>
                   <input
@@ -137,12 +136,12 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-lato"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-black font-montserrat font-medium mb-2">
+                  <label htmlFor="phone" className="block text-black font-playfair font-medium mb-2">
                     Phone *
                   </label>
                   <input
@@ -152,13 +151,13 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-lato"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-black font-montserrat font-medium mb-2">
+                <label htmlFor="service" className="block text-black font-playfair font-medium mb-2">
                   Legal Service Required
                 </label>
                 <select
@@ -166,7 +165,7 @@ const Contact = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-lato"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
                 >
                   <option value="">Select a service</option>
                   <option value="criminal">Criminal Law</option>
@@ -186,7 +185,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="description" className="block text-black font-montserrat font-medium mb-2">
+                <label htmlFor="description" className="block text-black font-playfair font-medium mb-2">
                   Brief Description of Legal Matter *
                 </label>
                 <textarea
@@ -196,13 +195,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-lato resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source resize-none"
                   placeholder="Please provide a brief overview of your legal matter..."
                 />
               </div>
 
               <div>
-                <label className="block text-black font-montserrat font-medium mb-2">
+                <label className="block text-black font-playfair font-medium mb-2">
                   Preferred Contact Method
                 </label>
                 <div className="flex flex-wrap gap-4">
@@ -215,7 +214,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className="text-gold focus:ring-gold"
                     />
-                    <span className="ml-2 font-lato">Email</span>
+                    <span className="ml-2 font-source">Email</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -226,7 +225,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className="text-gold focus:ring-gold"
                     />
-                    <span className="ml-2 font-lato">Phone</span>
+                    <span className="ml-2 font-source">Phone</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -237,7 +236,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className="text-gold focus:ring-gold"
                     />
-                    <span className="ml-2 font-lato">WhatsApp</span>
+                    <span className="ml-2 font-source">WhatsApp</span>
                   </label>
                   <label className="flex items-center">
                     <input
@@ -248,14 +247,14 @@ const Contact = () => {
                       onChange={handleChange}
                       className="text-gold focus:ring-gold"
                     />
-                    <span className="ml-2 font-lato">Video Call</span>
+                    <span className="ml-2 font-source">Video Call</span>
                   </label>
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gold hover:bg-yellow-600 text-black py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full bg-gold hover:bg-yellow-600 text-black py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Send className="w-6 h-6 text-black" />
                 Submit Consultation Request

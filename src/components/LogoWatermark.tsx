@@ -6,7 +6,10 @@ const LogoWatermark = () => {
         <img 
           src="/lovable-uploads/d2c7383a-b808-4503-8eb7-7814803eba24.png" 
           alt="KK Legal Watermark" 
-          className="w-96 h-96 md:w-[500px] md:h-[500px] opacity-[0.15] filter grayscale brightness-[1.3] contrast-[1.6] select-none"
+          className="w-96 h-96 md:w-[500px] md:h-[500px] opacity-[0.08] select-none"
+          style={{ 
+            filter: 'hue-rotate(15deg) saturate(1.8) brightness(1.1) contrast(1.4) sepia(0.3)'
+          }}
         />
       </div>
     </div>
