@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, Briefcase, User, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +18,8 @@ const Header = () => {
             <img 
               src="/lovable-uploads/d2c7383a-b808-4503-8eb7-7814803eba24.png" 
               alt="KK Legal Logo" 
-              className="h-12 w-12 brightness-0 invert opacity-90"
+              className="h-12 w-12 brightness-0 invert opacity-100 filter hue-rotate-[45deg] saturate-[3] contrast-[2]"
+              style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1352%) hue-rotate(2deg) brightness(119%) contrast(109%)' }}
             />
             <div>
               <h1 className="text-gold font-montserrat font-bold text-xl">KK Legal</h1>
@@ -30,26 +31,30 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium"
+              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
             >
+              <Home size={18} />
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium"
+              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
             >
+              <Briefcase size={18} />
               Services
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium"
+              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
             >
+              <User size={18} />
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-gold transition-colors font-lato font-medium"
+              className="text-white hover:text-gold transition-colors font-lato font-medium flex items-center gap-2"
             >
+              <Phone size={18} />
               Contact
             </button>
           </nav>
@@ -68,26 +73,30 @@ const Header = () => {
           <div className="fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors"
+              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
             >
+              <Home size={24} />
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors"
+              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
             >
+              <Briefcase size={24} />
               Services
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors"
+              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
             >
+              <User size={24} />
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white text-2xl font-montserrat hover:text-gold transition-colors"
+              className="text-white text-2xl font-montserrat hover:text-gold transition-colors flex items-center gap-3"
             >
+              <Phone size={24} />
               Contact
             </button>
           </div>

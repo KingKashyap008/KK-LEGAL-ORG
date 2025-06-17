@@ -42,19 +42,31 @@ const About = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-montserrat font-semibold text-black mb-2">Clarity</h4>
+                  <div className="flex items-center mb-2">
+                    <div className="w-1 h-6 bg-gold mr-3"></div>
+                    <h4 className="font-montserrat font-semibold text-black">Clarity</h4>
+                  </div>
                   <p className="text-gray-600 font-lato text-sm">Demystifying legal complexities into understandable terms</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-montserrat font-semibold text-black mb-2">Integrity</h4>
+                  <div className="flex items-center mb-2">
+                    <div className="w-1 h-6 bg-gold mr-3"></div>
+                    <h4 className="font-montserrat font-semibold text-black">Integrity</h4>
+                  </div>
                   <p className="text-gray-600 font-lato text-sm">Unwavering commitment to ethical practice and transparency</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-montserrat font-semibold text-black mb-2">Empowerment</h4>
+                  <div className="flex items-center mb-2">
+                    <div className="w-1 h-6 bg-gold mr-3"></div>
+                    <h4 className="font-montserrat font-semibold text-black">Empowerment</h4>
+                  </div>
                   <p className="text-gray-600 font-lato text-sm">Equipping clients with knowledge to make informed decisions</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-montserrat font-semibold text-black mb-2">Resolution</h4>
+                  <div className="flex items-center mb-2">
+                    <div className="w-1 h-6 bg-gold mr-3"></div>
+                    <h4 className="font-montserrat font-semibold text-black">Resolution</h4>
+                  </div>
                   <p className="text-gray-600 font-lato text-sm">Relentless focus on achieving tangible, favorable outcomes</p>
                 </div>
               </div>

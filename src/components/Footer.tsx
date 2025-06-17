@@ -1,4 +1,6 @@
 
+import { Home, Briefcase, User, Phone, Linkedin } from 'lucide-react';
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12">
@@ -10,7 +12,8 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/d2c7383a-b808-4503-8eb7-7814803eba24.png" 
                 alt="KK Legal Logo" 
-                className="h-10 w-10 brightness-0 invert opacity-90"
+                className="h-10 w-10 brightness-0 invert opacity-100"
+                style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1352%) hue-rotate(2deg) brightness(119%) contrast(109%)' }}
               />
               <div>
                 <h3 className="text-gold font-montserrat font-bold text-xl">KK Legal</h3>
@@ -28,26 +31,30 @@ const Footer = () => {
             <div className="space-y-2">
               <button 
                 onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block text-gray-300 hover:text-gold transition-colors font-lato"
+                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-lato"
               >
+                <Home size={16} />
                 Home
               </button>
               <button 
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block text-gray-300 hover:text-gold transition-colors font-lato"
+                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-lato"
               >
+                <Briefcase size={16} />
                 Services
               </button>
               <button 
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block text-gray-300 hover:text-gold transition-colors font-lato"
+                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-lato"
               >
+                <User size={16} />
                 About
               </button>
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block text-gray-300 hover:text-gold transition-colors font-lato"
+                className="flex items-center gap-2 text-gray-300 hover:text-gold transition-colors font-lato"
               >
+                <Phone size={16} />
                 Contact
               </button>
             </div>
@@ -67,9 +74,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-gray-300 hover:text-gold transition-colors mt-2"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
+                <Linkedin className="w-5 h-5" />
                 <span>LinkedIn Profile</span>
               </a>
             </div>
