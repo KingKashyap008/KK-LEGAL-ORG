@@ -36,7 +36,7 @@ const About = () => {
                   The firm's mission embodies the ancient Sanskrit principle <em className="text-gold font-medium">"Tamaso mā jyotir gamaya"</em> - from darkness to light - serving as the reliable beacon that provides clarity, strategic direction, and resolute advocacy.
                 </p>
                 <p>
-                  Practicing across Karnataka, Advocate Sai transforms client anxieties into concrete resolutions through principled legal counsel and an unwavering commitment to justice.
+                  Practicing across Karnataka, Advocate Y.S. Kashyap Sai transforms client anxieties into concrete resolutions through principled legal counsel and an unwavering commitment to justice.
                 </p>
               </div>
 
