@@ -1,6 +1,8 @@
+// src/components/Contact.tsx
 import { useState } from 'react';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '../lib/supabaseClient'; // Make sure this path is correct: ../lib/supabaseClient
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,24 +15,45 @@ const Contact = () => {
     preferredContact: 'email'
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => { // Added 'async' keyword here
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Consultation Request Received",
-      description: "We will contact you within 24 hours to discuss your legal matter.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      description: '',
-      preferredContact: 'email'
-    });
+    console.log('DEBUG: handleSubmit function started!');
+    console.log('Attempting to submit form data:', formData);
+
+    try {
+      // Insert data into your 'contacts' table
+      const { data, error } = await supabase
+        .from('contact_submissions') // Make sure 'contacts' is the exact name of your table in Supabase
+        .insert([formData]);
+
+      if (error) {
+        throw error;
+      }
+
+      console.log('Form submitted successfully to Supabase:', data);
+      toast({
+        title: "Consultation Request Received",
+        description: "We will contact you within 24 hours to discuss your legal matter.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        description: '',
+        preferredContact: 'email'
+      });
+
+    } catch (error: any) {
+      console.error('Error submitting form to Supabase:', error.message);
+      toast({
+        title: "Error submitting request",
+        description: `Something went wrong: ${error.message}. Please try again.`,
+        variant: "destructive", // Using a destructive variant for error toasts
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -48,8 +71,9 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          {/* STYLING FIX: Removed problematic classes to make text readable */}
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-6">
-            Get In <span className="bg-gold-text bg-clip-text text-transparent">Touch</span>
+            Get In Touch {/* Removed the <span> with bg-gold-text */}
           </h2>
           <p className="text-xl text-gray-600 font-source max-w-3xl mx-auto">
             Take the first step from uncertainty to clarity. Contact us for a consultation.
@@ -61,7 +85,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center">
@@ -107,7 +131,7 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Request Consultation</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-black font-playfair font-medium mb-2">
