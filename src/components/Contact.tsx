@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '../lib/supabaseClient'; // Make sure this path is correct: ../lib/supabaseClient
 
 const Contact = () => {
   const { toast } = useToast();
@@ -14,26 +13,28 @@ const Contact = () => {
     description: '',
     preferredContact: 'email'
   });
-
-  const handleSubmit = async (e: React.FormEvent) => { // Added 'async' keyword here
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('DEBUG: handleSubmit function started!');
-    console.log('Attempting to submit form data:', formData);
 
     try {
-      // Insert data into your 'contacts' table
-      const { data, error } = await supabase
-        .from('contact_submissions') // Make sure 'contacts' is the exact name of your table in Supabase
-        .insert([formData]);
+      const response = await fetch("https://formspree.io/f/mzzvnvwl", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+      });
 
-      if (error) {
-        throw error;
+      if (!response.ok) {
+        throw new Error('Failed to submit form. Please try again.');
       }
 
-      console.log('Form submitted successfully to Supabase:', data);
+      console.log('Form submitted successfully to Formspree!');
       toast({
         title: "Consultation Request Received",
-        description: "We will contact you within 24 hours to discuss your legal matter.",
+        description: "The office will get back to you within 24 hours to discuss your legal matter.",
       });
 
       // Reset form
@@ -47,11 +48,11 @@ const Contact = () => {
       });
 
     } catch (error: any) {
-      console.error('Error submitting form to Supabase:', error.message);
+      console.error('Error submitting form:', error.message);
       toast({
         title: "Error submitting request",
         description: `Something went wrong: ${error.message}. Please try again.`,
-        variant: "destructive", // Using a destructive variant for error toasts
+        variant: "destructive",
       });
     }
   };
@@ -71,9 +72,8 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          {/* STYLING FIX: Removed problematic classes to make text readable */}
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-6">
-            Get In Touch {/* Removed the <span> with bg-gold-text */}
+            Get In Touch
           </h2>
           <p className="text-xl text-gray-600 font-source max-w-3xl mx-auto">
             Take the first step from uncertainty to clarity. Contact us for a consultation.
@@ -81,14 +81,13 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Contact Information</h3>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-black" />
                   </div>
                   <div>
@@ -98,7 +97,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                     <Mail className="w-6 h-6 text-black" />
                   </div>
                   <div>
@@ -108,7 +107,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-black" />
                   </div>
                   <div>
@@ -120,7 +119,7 @@ const Contact = () => {
 
               <button
                 onClick={openWhatsApp}
-                className="w-full mt-8 bg-whatsapp hover:bg-green-600 text-white py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full mt-8 bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-6 h-6 text-white" />
                 WhatsApp Consultation
@@ -128,10 +127,9 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-playfair font-semibold text-black mb-6">Request Consultation</h3>
-
+            
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-black font-playfair font-medium mb-2">
@@ -144,7 +142,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 font-source"
                 />
               </div>
 
@@ -160,7 +158,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 font-source"
                   />
                 </div>
 
@@ -175,7 +173,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 font-source"
                   />
                 </div>
               </div>
@@ -189,7 +187,7 @@ const Contact = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 font-source"
                 >
                   <option value="">Select a service</option>
                   <option value="criminal">Criminal Law</option>
@@ -219,7 +217,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold font-source resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 font-source resize-none"
                   placeholder="Please provide a brief overview of your legal matter..."
                 />
               </div>
@@ -236,7 +234,7 @@ const Contact = () => {
                       value="email"
                       checked={formData.preferredContact === 'email'}
                       onChange={handleChange}
-                      className="text-gold focus:ring-gold"
+                      className="text-yellow-500 focus:ring-yellow-500"
                     />
                     <span className="ml-2 font-source">Email</span>
                   </label>
@@ -247,7 +245,7 @@ const Contact = () => {
                       value="phone"
                       checked={formData.preferredContact === 'phone'}
                       onChange={handleChange}
-                      className="text-gold focus:ring-gold"
+                      className="text-yellow-500 focus:ring-yellow-500"
                     />
                     <span className="ml-2 font-source">Phone</span>
                   </label>
@@ -258,7 +256,7 @@ const Contact = () => {
                       value="whatsapp"
                       checked={formData.preferredContact === 'whatsapp'}
                       onChange={handleChange}
-                      className="text-gold focus:ring-gold"
+                      className="text-yellow-500 focus:ring-yellow-500"
                     />
                     <span className="ml-2 font-source">WhatsApp</span>
                   </label>
@@ -269,7 +267,7 @@ const Contact = () => {
                       value="videocall"
                       checked={formData.preferredContact === 'videocall'}
                       onChange={handleChange}
-                      className="text-gold focus:ring-gold"
+                      className="text-yellow-500 focus:ring-yellow-500"
                     />
                     <span className="ml-2 font-source">Video Call</span>
                   </label>
@@ -278,7 +276,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gold hover:bg-yellow-600 text-black py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-4 rounded-lg font-source font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Send className="w-6 h-6 text-black" />
                 Submit Consultation Request
